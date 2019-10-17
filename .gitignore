@@ -1,0 +1,83 @@
+# Arquivos de aplicativos criados
+* .apk
+* .ap_
+* .aab
+
+# Arquivos para a VM ART / Dalvik
+* .dex
+
+# Arquivos de classe Java
+* .class
+
+# Arquivos gerados
+bin /
+gen /
+out /
+#   Remova o comentário da linha a seguir, caso você precise e não tenha os arquivos do tipo de compilação do release em seu aplicativo
+# release /
+
+# Arquivos Gradle
+.gradle /
+construir /
+
+# Arquivo de configuração local (caminho sdk, etc)
+local.properties
+
+# Pasta Proguard gerado pelo Eclipse
+proguard /
+
+# Arquivos de log
+* .log
+
+# Arquivos temporários do editor de Navegação do Android Studio
+.navigation /
+
+# Android Studio captura pasta
+capturas /
+
+# IntelliJ
+* .iml
+.idea / workspace.xml
+.idea / tasks.xml
+.idea / gradle.xml
+.idea / assetWizardSettings.xml
+.idea / dicionários
+.idea / bibliotecas
+# Android Studio 3 no arquivo .gitignore.
+.idea / caches
+.idea / modules.xml
+# Comente a próxima linha se a manutenção da posição dos elementos no Navigation Editor for relevante para você
+.idea / navEditor.xml
+
+# Arquivos de armazenamento de chaves
+# Remova o comentário das seguintes linhas, se você não deseja fazer o check-in de seus arquivos de armazenamento de chaves.
+# * .jks
+# * .keystore
+
+# Pasta de compilação nativa externa gerada no Android Studio 2.2 e posterior
+.externalNativeBuild
+
+# Serviços do Google (por exemplo, APIs ou Firebase)
+# google-services.json
+
+# Freeline
+freeline.py
+linha /
+freeline_project_description.json
+
+# fastlane
+fastlane / report.xml
+fastlane / Preview.html
+fastlane / screenshots
+fastlane / test_output
+fastlane / readme.md
+
+# Controle de versão
+vcs.xml
+
+# fiapos
+fiapos / intermediários /
+fiapo / gerado /
+fiapos / saídas /
+lint / tmp /
+# lint / reports /
