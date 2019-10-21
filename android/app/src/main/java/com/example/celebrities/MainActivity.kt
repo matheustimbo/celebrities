@@ -1,5 +1,6 @@
 package com.example.celebrities
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
@@ -9,9 +10,14 @@ import androidx.core.view.ViewCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.celebrity_holder.view.*
 import org.jetbrains.anko.startActivity
 
 class MainActivity : AppCompatActivity() {
+
+    companion object {
+        const val EXTRA_IMAGEM_CELEBRIDADE = "extraImagemCelebridade"
+    }
 
     lateinit var celebritiesAdapter: CelebritiesAdapter
 
@@ -21,9 +27,12 @@ class MainActivity : AppCompatActivity() {
 
 
         celebritiesAdapter = CelebritiesAdapter(
-            onItemClicked = {
-                startActivity<DetailsActivity>()
-               
+            onItemClicked = { celebrity, holder ->
+                val intentShared = Intent(this@MainActivity, DetailsActivity::class.java)
+                val imageView = holder.itemView.imageView
+                val options = ActivityOptionsCompat.makeSceneTransitionAnimation(this@MainActivity, imageView, imageView.transitionName)
+                startActivity(intentShared, options.toBundle()?.apply { putInt(EXTRA_IMAGEM_CELEBRIDADE, celebrity.foto) })
+
             }
         )
         celebritiesList.layoutManager = LinearLayoutManager(this) as RecyclerView.LayoutManager?

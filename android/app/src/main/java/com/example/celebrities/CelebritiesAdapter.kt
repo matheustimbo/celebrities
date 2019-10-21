@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.celebrity_holder.view.*
 
-class CelebritiesAdapter(val onItemClicked: (celebrity: Celebrity) -> Unit): RecyclerView.Adapter<CelebritiesAdapter.CelebrityViewHolder>(){
+class CelebritiesAdapter(val onItemClicked: (celebrity: Celebrity, holder: CelebrityViewHolder) -> Unit): RecyclerView.Adapter<CelebritiesAdapter.CelebrityViewHolder>(){
 
     private var celebritiesArray = mutableListOf<Celebrity>()
 
@@ -34,7 +34,7 @@ class CelebritiesAdapter(val onItemClicked: (celebrity: Celebrity) -> Unit): Rec
             holder.itemView.textView.text = celebritiesArray[position].nome
             holder.itemView.imageView.setImageResource(celebritiesArray[position].foto)
             holder.itemView.setOnClickListener{
-                onItemClicked(celebritiesArray[position])
+                onItemClicked(celebritiesArray[position], holder)
             }
 
         }
