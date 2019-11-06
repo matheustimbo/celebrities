@@ -1,6 +1,7 @@
 package com.example.celebridade.PackageAdapter
 
 import android.content.Context
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.celebridade.R
 import com.example.celebridade.PackageActivity.MainActivity
 import com.example.celebridade.localdatabase.PackageDAO.CelebritiesINFOS
+import kotlin.random.Random
 
 class CelebrityAdapter(private val textContext: Context, private val CelebList: List<CelebritiesINFOS>, val listener: MainActivity): RecyclerView.Adapter<CelebrityAdapter.CelebritiesHolderCard>() {
 
@@ -83,7 +85,9 @@ java android
 
 
         init {
-
+            val constraintview = view.findViewById<View>(R.id.constraintlayout)
+            val bgcolor = Color.argb(255, Random.nextInt(256), Random.nextInt(256), Random.nextInt(256));
+            constraintview.setBackgroundColor(bgcolor)
             view.setOnClickListener{
                 listenCelebrities.onClick(it, adapterPosition)
             }

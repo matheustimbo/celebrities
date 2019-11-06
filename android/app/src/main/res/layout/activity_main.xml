@@ -10,7 +10,7 @@
         android:id="@+id/main_recyclerview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#fcfcfc"
+        android:background="#8AF1B9"
         android:layoutAnimation="@anim/layout_animation_left_to_right"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
